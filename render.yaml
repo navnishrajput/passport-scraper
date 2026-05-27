@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: passport-scraper-backend
+    env: java
+    buildCommand: cd backend && ./mvnw clean package -DskipTests
+    startCommand: cd backend && java -jar target/passport-scraper-1.0.0.jar
+    plan: free
+    envVars:
+      - key: JAVA_VERSION
+        value: 17
