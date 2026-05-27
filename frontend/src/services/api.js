@@ -1,6 +1,6 @@
-import axios from 'axios';
+﻿import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://passport-scraper-api.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -25,9 +25,7 @@ export const fetchStats = async () => {
 };
 
 export const translatePost = async (postId, targetLanguage) => {
-  const { data } = await api.post(`/translate/${postId}`, null, { 
-    params: { targetLanguage } 
-  });
+  const { data } = await api.post(`/translate/${postId}`, null, { params: { targetLanguage } });
   return data;
 };
 
@@ -42,10 +40,7 @@ export const fetchLanguages = async () => {
 };
 
 export const downloadCSV = async (filters = {}) => {
-  const { data } = await api.get('/export/csv', { 
-    params: filters,
-    responseType: 'blob'
-  });
+  const { data } = await api.get('/export/csv', { params: filters, responseType: 'blob' });
   return data;
 };
 
