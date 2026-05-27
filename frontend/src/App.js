@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaSearch, FaDownload, FaFilter, FaRedo, FaGlobe, FaTimes } from 'react-icons/fa';
 import axios from 'axios';
 import PostCard from './components/PostCard';
