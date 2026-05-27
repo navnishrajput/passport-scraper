@@ -5,7 +5,7 @@ import PostCard from './components/PostCard';
 import FilterSidebar from './components/FilterSidebar';
 import StatsBar from './components/StatsBar';
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'https://passport-scraper.onrender.com/api';
 
 export default function App() {
   const [posts, setPosts] = useState([]);
