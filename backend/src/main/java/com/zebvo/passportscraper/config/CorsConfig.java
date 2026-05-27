@@ -9,18 +9,24 @@ import java.util.Arrays;
 
 @Configuration
 public class CorsConfig {
-
+    
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList("http://localhost:3000", "https://*.vercel.app"));
+        config.setAllowedOrigins(Arrays.asList(
+            "https://dashboard-psi-navy-53.vercel.app",
+            "https://dashboard-lxiwrxcck-navnishrajputs-projects.vercel.app",
+            "https://dashboard-57ao7wt61-navnishrajputs-projects.vercel.app",
+            "http://localhost:3000"
+        ));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(Arrays.asList("*"));
         config.setAllowCredentials(true);
-
+        config.setMaxAge(3600L);
+        
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/api/**", config);
-
+        source.registerCorsConfiguration("/**", config);
+        
         return new CorsFilter(source);
     }
 }
